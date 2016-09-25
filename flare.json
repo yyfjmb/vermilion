@@ -21,19 +21,19 @@
     {
      "name": "Events",
      "children": [
-      {"name": "Openning Ceremony", "size": 1983},
-      {"name": "Product launches", "size": 2047},
-      {"name": "Conference & Seminars", "size": 1375},
-      {"name": "DFT-site", "size": 8746}
+      {"name": "Openning Ceremony"},
+      {"name": "Product launches"},
+      {"name": "Conference & Seminars"},
+      {"name": "DFT-site"}
      ]
     },
     {
      "name": "Brand Management",
      "children": [
-      {"name": "Brand Images", "size": 1983},
-      {"name": "ColorInterpolator", "size": 2047},
-      {"name": "DateInterpolator", "size": 1375},
-      {"name": "Interpolator", "size": 8746}
+      {"name": "Brand Images"},
+      {"name": "ColorInterpolator"},
+      {"name": "DateInterpolator"},
+      {"name": "Interpolator"}
      ]
     }
    ]
@@ -50,16 +50,16 @@
     },
     {"name": "Graphic Design",
      "children": [
-      {"name": "Mini-Site", "size": 721},
-      {"name": "Data Presentation", "size": 4294},
-      {"name": "Infographic", "size": 4294}
+      {"name": "Mini-Site"},
+      {"name": "Data Presentation"},
+      {"name": "Infographic"}
      ]
     },
     {"name": "Market Materials",
      "children": [
-      {"name": "Award Pitches", "size": 721},
-      {"name": "Event Content", "size": 4294},
-      {"name": "Co-operation", "size": 4294}
+      {"name": "Award Pitches"},
+      {"name": "Event Content"},
+      {"name": "Co-operation"}
      ]
     }
    ]
@@ -67,10 +67,18 @@
   {
    "name": "Social Media",
    "children": [
-    {"name": "DirtySprite", "size": 8833},
-    {"name": "LineSprite", "size": 1732},
-    {"name": "RectSprite", "size": 3623},
-    {"name": "TextSprite", "size": 10066}
+    {"name": "International ",
+     "children": [
+      {"name": "Facebook"},
+      {"name": "LinkedIn"}
+     ]
+    },
+    {"name": "China",
+     "children": [
+      {"name": "Weibo"},
+      {"name": "Wechat"}
+     ]
+    }
    ]
   }
  ]
