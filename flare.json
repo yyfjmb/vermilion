@@ -1,0 +1,77 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "Public Relations",
+   "children": [
+    {
+     "name": "Media Relations"
+    },
+    {
+     "name": "Invest Relations"
+    },
+    {
+     "name": "Media Training"
+    }
+   ]
+  },
+  {
+   "name": "Marketing",
+   "children": [
+    {
+     "name": "Events",
+     "children": [
+      {"name": "Openning Ceremony", "size": 1983},
+      {"name": "Product launches", "size": 2047},
+      {"name": "Conference & Seminars", "size": 1375},
+      {"name": "DFT-site", "size": 8746}
+     ]
+    },
+    {
+     "name": "Brand Management",
+     "children": [
+      {"name": "Brand Images", "size": 1983},
+      {"name": "ColorInterpolator", "size": 2047},
+      {"name": "DateInterpolator", "size": 1375},
+      {"name": "Interpolator", "size": 8746}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Content",
+   "children": [
+    {
+     "name": "Thought Leadership",
+     "children": [
+      {"name": "Op-eds", "size": 721},
+      {"name": "White papers", "size": 4294}
+     ]
+    },
+    {"name": "Graphic Design",
+     "children": [
+      {"name": "Mini-Site", "size": 721},
+      {"name": "Data Presentation", "size": 4294},
+      {"name": "Infographic", "size": 4294}
+     ]
+    },
+    {"name": "Market Materials",
+     "children": [
+      {"name": "Award Pitches", "size": 721},
+      {"name": "Event Content", "size": 4294},
+      {"name": "Co-operation", "size": 4294}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Social Media",
+   "children": [
+    {"name": "DirtySprite", "size": 8833},
+    {"name": "LineSprite", "size": 1732},
+    {"name": "RectSprite", "size": 3623},
+    {"name": "TextSprite", "size": 10066}
+   ]
+  }
+ ]
+}
