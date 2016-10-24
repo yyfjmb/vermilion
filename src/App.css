@@ -1,0 +1,827 @@
+@import 'https://fonts.googleapis.com/css?family=Josefin+Slab:300,400|Playfair+Display:400,700|Playfair+Display+SC:400,700';
+
+@font-face {
+    font-family: 'slick2';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://yyfjmb.github.io/vermilion/static/media/slick.b7c9e1e4.woff') format('woff'), url('https://yyfjmb.github.io/vermilion/static/media/slick.d41f55a7.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.App {
+  text-align: center;
+  font-family: 'Calibri', serif;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+video.cover_video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+}
+
+#introduction {
+  position: absolute;
+  width: 25%;
+  padding: 30px;
+  text-align: left;
+  line-height: 1.8;
+  height: 90vh;
+  background-color: rgba(159,133,97,0.1);
+  font-family: 'calibri', sans-serif;
+  color: white;
+  font-weight: 200;
+}
+
+#introduction p {
+  color: black;
+}
+
+#introduction h2 {
+  color: #840000;
+  font-family: 'Playfair Display SC', serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #840000;
+  display: inline-block;
+}
+
+#cover {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+#title {
+  font-size: 2em;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 45%;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 20;
+  pointer-events: none;
+}
+
+#title img {
+  width: 30%;
+  max-width: 200px;
+}
+
+#nav_bar {
+  position: absolute;
+  /* bottom: 10%; */
+  left: 0;
+  height: 40px;
+  z-index: 70;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  overflow: hidden;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 17px;
+}
+
+#nav_bar li {
+  color: white;
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  flex-basis: 0;
+  transition: all .3s ease-in-out;
+  display: block;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.2)
+}
+
+#nav_bar li:hover {
+  border-top: 5px solid white;
+  background-color: rgba(255,255,255,0);
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+#nav_bar li a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding-top: 75vh;
+  text-shadow: 0px 0px 3px black;
+}
+
+#icon_section {
+  position: absolute;
+  width: 60%;
+  text-align: left;
+  padding-left: 3em;
+  padding-top: 3em;
+}
+
+.service_icon {
+  width: 40%;
+}
+
+#text_section {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  padding: 4em;
+  padding-right: 10em;
+  padding-top: 20%;
+  text-align: justify;
+}
+
+.pr_grid {
+  width: 40%;
+  background-color: grey;
+  height: 150px;
+  display: inline-block;
+  margin: 0.8em;
+}
+
+#mindmap {
+  height: 90vh;
+}
+
+#pie_chart{
+  height: 50vh;
+  width: 25%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+#funnel_chart{
+  height: 50vh;
+  width: 25%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.chart {
+  width: 70%;
+  padding: 80px 100px;
+  text-align: justify;
+  height: 90vh;
+  display: inline-block;
+}
+
+.chart_text {
+  padding: 100px 50px;
+  width: 25%;
+  text-align: justify;
+  background-color: rgb(92,18,18);
+  font-family: 'Calibri', serif;
+  font-weight: 200;
+  color: white;
+  padding-top: 80px;
+  padding-left: 50px;
+  height: 90vh;
+  display: inline-block;
+}
+
+.chart_explain {
+  width: 90%;
+  float: left;
+  margin-left: 10%;
+  max-width: 600px;
+}
+
+#bar_chart{
+  height: 50vh;
+  width: 100%;
+  max-width: 600px;
+  float: left;
+  margin-left: 10%;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: #F2F2F2;
+  stroke-width: 3px;
+}
+
+.node text {
+  font-size: 12px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+.link {
+  fill: none;
+  stroke: #EBD8D8;
+  stroke-width: 1.5px;
+}
+
+#headshot {
+    width: 100%;
+    font-family: 'Calibri', serif;
+    height: 90vh;
+}
+
+.headshot_container {
+    width: 100%;
+    padding-top: 5vh;
+    width: 100%;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.headshot_thumb:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.headshot_thumb {
+    margin-bottom: 2rem;
+    width: 15%;
+    margin-left: 0;
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.headshot_thumb img {
+    width: 100%;
+    -webkit-transition: .4s all linear;
+    transition: .4s all linear;
+}
+
+.headshot_thumb .headshot_name {
+    color: #fff;
+    text-align: center;
+    opacity: 1;
+    font-size: 14px;
+    background-color: rgb(92, 18, 18);
+    margin-top: -.5rem;
+    padding: .4rem;
+    z-index: 50;
+    position: relative;
+    width: 134%;
+    font-family: 'Playfair Display SC', serif;
+    margin-left: -17%;
+}
+
+.headshot_thumb:nth-child(1) .headshot_name {
+  margin-left: 0%;
+  width: 117%;
+}
+
+.headshot_thumb:nth-child(5) .headshot_name {
+  margin-right: 0%;
+  width: 117%;
+}
+
+.text_container    {
+    width: 100%;
+    top: 55%;
+    text-align: justify;
+    padding: 30px;
+}
+
+.text_container .title {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.text_container .title h2 {
+  margin-top: -15px;
+  font-size: 2em;
+  margin-bottom: 0;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.text_container .title h3 {
+  margin-top: -10px;
+  font-size: 20px;
+  color: grey;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.text_container .description {
+  width: 60%;
+  display: inline-block;
+}
+
+.ct .content_container {
+  font-family: 'Calibri', serif;
+  max-width: 1200px;
+  width: 50%;
+  padding: 30px;
+  margin: 0 auto;
+  text-align: justify;
+  vertical-align: top;
+  height: 58vh;
+}
+
+.content_intro {
+  background-color: rgb(92, 18, 18);
+  margin: 0;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px 50px;
+  color: white;
+}
+
+.introduction p {
+  color: black;
+}
+
+.introduction h2 {
+  color: #840000;
+  font-family: 'Playfair Display SC', serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #840000;
+  display: inline-block;
+}
+
+.content_list {
+  width: 100%;
+  padding: 30px !important;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+  height: 90vh;
+}
+
+.ct .content_list {
+  width: 100%;
+  display: inline-block !important;
+  vertical-align: top;
+  list-style: none;
+  padding: 0 30px !important;
+  height: 58vh;
+}
+
+.ct .intro_container {
+  width: 50%;
+  display: inline-block;
+  padding: 0 30px;
+  text-align: justify;
+  background-color: rgba(159,133,97,0.1);
+  height: 58vh;
+}
+
+.ct .content_container {
+    height: 58vh;
+    width: 50%;
+    display: inline-block;
+}
+
+.sm .intro_container {
+  width: 30%;
+  display: inline-block;
+  padding: 30px;
+  text-align: justify;
+  background-color: rgba(159,133,97,0.1);
+  height: 90vh;
+  vertical-align: top;
+  text-align: left;
+}
+
+.sm .content_container {
+  width: 70%;
+  padding: 30px !important;
+  text-align: justify;
+  height: 90vh;
+  display: inline-block;
+}
+
+.ms .intro_container {
+  width: 40%;
+  display: inline-block;
+  padding: 30px;
+  text-align: justify;
+  background-color: rgba(159,133,97,0.1);
+  height: 90vh;
+  vertical-align: top;
+  text-align: left;
+}
+
+.ms .content_container {
+  width: 60%;
+  padding: 30px;
+  padding-top: 0;
+  text-align: justify;
+  height: 90vh;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ms .content_list {
+  vertical-align: bottom;
+  text-align: justify;
+  padding: 0 0 0 50px;
+}
+
+.ms_image_container {
+    height: 90vh;
+    width: 50%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.ms_image {
+  height: 50vh;
+  width: 100%;
+  background-size: cover;
+  height: 45vh;
+  margin-bottom: 5vh;
+}
+
+.slick-slide {
+  margin-bottom: 15px !important;
+}
+
+.slick-prev {
+  left: -65px !important;
+}
+
+.slick-prev:before {
+    content: ' ' !important;
+    background-image: url(https://yyfjmb.github.io/vermilion-data/arrow_prev.svg);
+    background-size: 100% auto;
+    width: auto;
+    height: 100%;
+    background-size: 100% auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.slick-next:before {
+    content: ' ' !important;
+    background-image: url(https://yyfjmb.github.io/vermilion-data/arrow_next.svg);
+    background-size: 100% auto;
+    width: auto;
+    height: 100%;
+    background-size: 100% auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.slick-next {
+  right: -65px !important;
+}
+
+.highlight {
+  font-family: 'Playfair Display SC', serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.slick-prev, .slick-next {
+  width: 20px !important;
+  height: 60px !important;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 25px !important;
+  color: black !important;
+  opacity: .6 !important;
+}
+
+.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before {
+    opacity: 1 !important;
+}
+
+.slick-prev:before:hover, .slick-next:before:hover {
+  opacity: 1 !important;
+}
+
+.slick-list {
+  margin-bottom: 50px !important;
+}
+
+.head_pic {
+  height: 30vh;
+  background-size: cover;
+  background-position: 0% 50%;
+  background-color: rgba(159,133,97,0.1);
+}
+
+.pr .head_pic {
+  width: 40%;
+  height: 90vh;
+  background-position: 100% 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.pr .intro_container {
+  width: 30%;
+  display: inline-block;
+  padding: 0 30px;
+  text-align: left;
+  background-color: rgba(159,133,97,0.1);
+  height: 58vh;
+}
+
+.pr .content_container{
+  width: 70%;
+  display: inline-block;
+  vertical-align: top;
+  font-family: 'Calibri', serif;
+  max-width: 1200px;
+  padding: 30px;
+  margin: 0 auto;
+  text-align: justify;
+  vertical-align: top;
+  height: 58vh;
+}
+
+.pr .content_intro {
+  width: 100%;
+  background-color: rgb(92, 18, 18);
+  color: white;
+  max-width: 500px;
+}
+
+.pr .content_list {
+  width: 100%;
+  display: inline-block !important;
+  vertical-align: top;
+  list-style: none;
+  padding: 0 30px !important;
+  height: 58vh;
+}
+
+.section .content_container {
+  padding: 0 50px;
+  height: 90vh;
+}
+
+.fp-viewing-whtwedo #nav_bar, .fp-viewing-pr #nav_bar, .fp-viewing-ct #nav_bar, .fp-viewing-sm #nav_bar, .fp-viewing-ms #nav_bar, .fp-viewing-ms #nav_bar, .fp-viewing-people #nav_bar{
+  display: none;
+}
+
+.fp-viewing-whtwedo #title, .fp-viewing-pr #title, .fp-viewing-ct #title, .fp-viewing-sm #title, .fp-viewing-ms #title, .fp-viewing-ms #title, .fp-viewing-people #title {
+  display: none;
+}
+
+.fp-viewing-home #nav_bar{
+  display: flex;
+}
+
+.fp-controlArrow.fp-prev {
+  border-color: transparent #EBD8D8 transparent transparent;
+}
+
+.fp-controlArrow.fp-next {
+  border-color: transparent transparent transparent #EBD8D8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90%;
+}
+
+.ct .container {
+  height: 58vh;
+}
+
+.pr .container {
+  height: 58vh;
+}
+
+.video {
+  height: 33vh;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 4vh;
+}
+
+.video video {
+  width: 100%;
+  height: auto;
+  z-index: -100;
+  margin-top: -20vh;
+}
+
+.ct .fp-tableCell, .pr .fp-tableCell {
+  vertical-align: top;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px){
+
+  .chart_text {
+    width: 30%;
+  }
+
+  .chart {
+    width: 70%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .App { 
+    font-size: 12px;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  .ct .container {
+    height: 100%;
+  }
+
+  .ct .intro_container {
+    width: 100%;
+    height: 40%;
+  }
+
+  .ct .content_container {
+    width: 100%;
+    padding: 15px;
+    height: 60%;
+  }
+
+  .ct .content_list {
+    width: 100%;
+    max-width: auto;
+    height: 100%;
+  }
+
+  .pr .container {
+    height: 100%;
+  }
+
+  .pr .intro_container {
+    width: 100%;
+    height: 40%;
+  }
+
+  .pr .content_container {
+    width: 100%;
+    padding: 15px;
+    height: 60%;
+  }
+
+  .pr .content_list {
+    height: 100%;
+  }
+
+  .sm .container {
+    height: 100%;
+  }
+
+  .sm .intro_container {
+    width: 100%;
+    height: 40%;
+    padding: 0 30px;
+  }
+
+  .sm .content_container {
+    width: 100%;
+    padding: 15px;
+    height: 60%;
+  }
+
+  .sm .content_list {
+    height: 55%;
+  }
+
+  #bar_chart {
+    margin-left: 0;
+    height: 40vh;
+  }
+
+  .ms .container {
+    height: 100%;
+  }
+
+  .ms .intro_container {
+    width: 100%;
+    height: 30%;
+    padding: 0 30px;
+  }
+
+  .ms .content_container {
+    width: 100%;
+    padding: 15px;
+    height: 70%;
+  }
+
+  .ms .content_list {
+    height: 100%;
+    padding: 0 30px !important;
+  }
+
+  .ms_image {
+    height: 20vh;
+  }
+
+  /*.chart_text {
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .chart {
+    width: 100%;
+    padding: 30px;
+    height: 50vh;
+  }*/
+
+  /*.ms_image_container {
+    width: 100%;
+    height: 30vh;
+  }
+
+  .ms_image {
+    display: inline-block;
+    width: 50%;
+    background-position: center;
+    height: 100%;
+  }
+
+  .ms .content_list {
+    width: 100%;
+    height: 20vh;
+    margin-bottom: 50vh;
+    padding: 20px 50px;
+  }
+
+  .ms .content_intro {
+    width: 100%;
+    left: 0;
+    top: 50vh;
+    padding-top: 20px;
+    height: 50vh;
+  }*/
+
+  .container {
+    height: 100%;
+  }
+
+  .headshot_container {
+    padding-top: 0;
+  }
+
+  #headshot {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .text_container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .text_container .title {
+    display: block;
+    width: 100%;
+  }
+
+  .text_container .description {
+    display: block;
+    width: 100%;
+  }
+
+}
+

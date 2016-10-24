@@ -1,0 +1,83 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "Public Relations",
+   "children": [
+    {
+     "name": "Media Relations"
+    },
+    {
+     "name": "Invest Relations"
+    },
+    {
+     "name": "Media Training"
+    }
+   ]
+  },
+  {
+   "name": "Marketing",
+   "children": [
+    {
+     "name": "Events",
+     "children": [
+      {"name": "Openning Ceremony"},
+      {"name": "Product launches"},
+      {"name": "Conference & Seminars"},
+      {"name": "DFT-site"}
+     ]
+    },
+    {
+     "name": "Brand Management",
+     "children": [
+      {"name": "Brand Images"},
+      {"name": "ColorInterpolator"},
+      {"name": "DateInterpolator"}     ]
+    }
+   ]
+  },
+  {
+   "name": "Content",
+   "children": [
+    {
+     "name": "Thought Leadership",
+     "children": [
+      {"name": "Op-eds", "size": 721},
+      {"name": "White papers", "size": 4294}
+     ]
+    },
+    {"name": "Graphic Design",
+     "children": [
+      {"name": "Mini-Site"},
+      {"name": "Data Presentation"},
+      {"name": "Infographic"}
+     ]
+    },
+    {"name": "Market Materials",
+     "children": [
+      {"name": "Award Pitches"},
+      {"name": "Event Content"},
+      {"name": "Co-operation"}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Social Media",
+   "children": [
+    {"name": "International ",
+     "children": [
+      {"name": "Facebook"},
+      {"name": "LinkedIn"}
+     ]
+    },
+    {"name": "China",
+     "children": [
+      {"name": "Weibo"},
+      {"name": "Wechat"}
+     ]
+    }
+   ]
+  }
+ ]
+}
