@@ -17,6 +17,8 @@ let Slider = require('react-slick');
 
 import logo from './images/vermilion.svg';
 import coverImage from './images/cover.jpg';
+import coverImage1 from './images/cover1.jpg';
+import coverImage2 from './images/cover2.jpg';
 import cover1 from './images/video1.mp4'
 import cover2 from './images/video2.mp4'
 import cover3 from './images/video3.mp4'
@@ -24,9 +26,6 @@ import cover4 from './images/video4.mp4'
 import cover5 from './images/video5.mp4'
 import cover6 from './images/video6.mp4'
 
-import film from './images/film.jpg';
-import pr from './images/pr.jpg';
-import social from './images/social.jpg';
 import bgPatternImg from './images/vertical_cloth.png';
 import stephanie from './images/stephanie.png';
 import daniel from './images/daniel.png';
@@ -35,8 +34,6 @@ import people2 from './images/people2.png';
 import people3 from './images/people3.png';
 import pattern from './images/pattern.png'
 import piePatternSrc from './images/pie_pattern.png'
-import content_bg from './images/content_bg.jpg'
-import pr_bg from './images/pr_bg.jpg'
 import ms1 from './images/ms1.jpg'
 import ms2 from './images/ms2.jpg'
 import ms3 from './images/ms3.png'
@@ -198,7 +195,7 @@ function start_expand() {
       click(root.children[1])
       click(root.children[2])
       click(root.children[3])
-  }, 1000);
+  }, 2000);
   setTimeout(function(){
       click(root.children[1].children[0])
       click(root.children[1].children[1])
@@ -206,7 +203,7 @@ function start_expand() {
       click(root.children[2].children[1])
       click(root.children[3].children[0])
       click(root.children[3].children[1])
-  }, 2000);
+  }, 4000);
 }
 
 function start_expand_reverse() {
@@ -390,8 +387,6 @@ function start_expand_reverse() {
 });
 
 let background_dot = {backgroundImage: 'url(' + pattern + ')', backgroundSize: '200px 200px'}
-let background_writing = {backgroundImage: 'url(' + content_bg + ')'}
-let background_pr = {backgroundImage: 'url(' + pr_bg + ')'}
 let ms1_bg = {backgroundImage: 'url(' + ms1 + ')'}
 let ms2_bg = {backgroundImage: 'url(' + ms2 + ')'}
 let ms3_bg = {backgroundImage: 'url(' + ms3 + ')'}
@@ -494,7 +489,7 @@ let App = React.createClass({
             
             <section className="section ct" style={background_dot}>
             <div className="video desktop">
-              <video  src={pages[1].video} poster={coverImage} autoPlay loop muted></video>
+              <video  src={pages[1].video} poster={coverImage1} autoPlay loop muted></video>
             </div>
               <div className="container">
                 <div className="intro_container">
@@ -526,7 +521,7 @@ let App = React.createClass({
 
             <section className="section pr" style={background_dot}>
               <div className="video desktop">
-                <video  src={pages[5].video} poster={coverImage} autoPlay loop muted></video>
+                <video  src={pages[5].video} poster={coverImage2} autoPlay loop muted></video>
               </div>
               <div className="container">
                 <div className="intro_container">
