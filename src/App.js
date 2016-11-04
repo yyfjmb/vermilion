@@ -48,7 +48,7 @@ $(document).ready(function() {
     var window_width = $(window).width(),
         window_height = $(window).height()
 
-    var margin = {top: 0, right: 160, bottom: 0, left: 450},
+    var margin = {top: 0, right: 160, bottom: 0, left: 110 + window_width/4},
     width = window_width - margin.right - margin.left,
     height = window_height*0.9 - margin.top - margin.bottom;
 
@@ -96,7 +96,7 @@ function update(source) {
       links = tree.links(nodes);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 150; });
+  nodes.forEach(function(d) { d.y = d.depth * width/4; });
 
   // Update the nodes…
   var node = svg.selectAll("g.node")
@@ -190,12 +190,32 @@ function click(d) {
 
 function start_expand() {
   update(root);
-  setTimeout(function(){
-      click(root.children[0])
-      click(root.children[1])
-      click(root.children[2])
-      click(root.children[3])
-  }, 2000);
+  let index = 0;
+  var toggle1 = setInterval(frame1, 1000)
+  // var toggle2 = setInterval(frame2, 1000)
+  function frame1() {
+    if (index === 4) {
+      clearInterval(toggle1);
+    } else {
+      click(root.children[index])
+      index++;
+    }
+  }
+  // function frame2() {
+  //   if (index === 4) {
+  //     clearInterval(toggle2);
+  //   } else {
+  //     click(root.children[index])
+  //     index++;
+  //   }
+  // }
+
+  // setTimeout(function(){
+  //     click(root.children[0])
+  //     click(root.children[1])
+  //     click(root.children[2])
+  //     click(root.children[3])
+  // }, 2000);
   setTimeout(function(){
       click(root.children[1].children[0])
       click(root.children[1].children[1])
@@ -203,7 +223,7 @@ function start_expand() {
       click(root.children[2].children[1])
       click(root.children[3].children[0])
       click(root.children[3].children[1])
-  }, 4000);
+  }, 5000);
 }
 
 function start_expand_reverse() {
@@ -404,8 +424,8 @@ let pages = [
 let headshot = [
     {name: "Daniel Inman", content: "Daniel Inman is an experienced financial writer who has worked in Hong Kong, China and Japan for more than a decade. He most recently covered markets across Asia and China’s financial system for The Wall Street Journal. Before that he was a deal reporter at FinanceAsia, a leading sell-side trade publication, where he also wrote about the Chinese economy. Daniel has a strong understanding of finance and economics across Asia –in addition to an awareness of how the region fits into the global financial system. He has a special focus on China. He has also provided marketing consultancy services to several of the world’s largest financial institutions –creating high-quality content for a number of global banks as well as several asset management companies. Daniel is from the United Kingdom and has a B.A. and MPhil in Philosophy from University College London.", src: daniel, title: "Director"},
     {name: "Stephanie Cheung", content: "Stephanie is a public relations professional who has served clients in both the financial and luxury goods industries. She previously worked at FinanceAsia, where she helped arranged conferences and large banquets. After that, she gained hands-on PR and social marketing experience in China working on projects for high-profile clients -such as Chanel, Baccarat, American Airlines, Pernod Ricard etc.", src: stephanie, title: "Vice Director"},
-    {name: "Wynne Wang", content: "Wynne is a former financial journalist, who most recently worked at The Wall Street Journal in Shanghai, where she covered fixed income and the renminbi for close to a decade. Before that, she was worked at Oriental Morning Post. She graduated from Fudan University.", src: people2, title: "Journalist"},
-    {name: "Stella Shu", content: "Stella is a life-style editor. For more than 10 years, and has written for both English and Chinese language media.", src: people1, title: "Life-style editor"},
+    {name: "Wynne Wang", content: "Wynne is a former financial journalist, who most recently worked at The Wall Street Journal in Shanghai, where she covered fixed income and the renminbi for close to a decade. Before that, she was worked at Oriental Morning Post. She graduated from Fudan University.", src: people1, title: "Journalist"},
+    {name: "Stella Shu", content: "Stella is a life-style editor. For more than 10 years, and has written for both English and Chinese language media.", src: people2, title: "Life-style editor"},
     {name: "Li Jia", content: "Li Jia is a highly experienced translator that has worked in house at the Chinese securities regulator in Beijing and at the Shanghai Futures Exchange. A seasoned simultaneous interpreter, Li Jia has an extensive knowledge of finance that she is able to use to create fast and accurate translations from English to Chinese and vice versa. She has provided interpretation services for countless corporate clients and is a graduate of Zhejiang University.", src: people3, title: "Translator"},
     
   ]
