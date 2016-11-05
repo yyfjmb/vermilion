@@ -44,9 +44,15 @@ import wechat from './images/share_wechat.svg'
 import weibo from './images/share_weibo.svg'
 
 $(document).ready(function() {
+      if ($(window).width() < 1200) {
+        var window_width = $(window).width(),
+            window_height = $(window).height()
+      } else {
+        var window_width = 1200,
+            window_height = $(window).height()
+      }
 
-    var window_width = $(window).width(),
-        window_height = $(window).height()
+    
 
     var margin = {top: 0, right: 160, bottom: 0, left: 110 + window_width/4},
     width = window_width - margin.right - margin.left,
