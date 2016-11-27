@@ -22,7 +22,7 @@
      "name": "Events",
      "children": [
       {"name": "Openning Ceremony"},
-      {"name": "Product launches"},
+      {"name": "Product Launches"},
       {"name": "Conference & Seminars"},
       {"name": "DFT-site"}
      ]
@@ -45,7 +45,7 @@
      "name": "Thought Leadership",
      "children": [
       {"name": "Op-eds", "size": 721},
-      {"name": "White papers", "size": 4294}
+      {"name": "White Papers", "size": 4294}
      ]
     },
     {"name": "Graphic Design",
