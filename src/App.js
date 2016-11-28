@@ -17,8 +17,10 @@ let Slider = require('react-slick');
 
 import logo from './images/vermilion.svg';
 import coverImage from './images/cover.jpg';
+import cover_mobile from './images/cover_mobile.jpg';
 import coverImage1 from './images/cover1.jpg';
 import coverImage2 from './images/cover2.jpg';
+import outlines from './images/lines.png';
 import cover1 from './images/video1.mp4'
 import cover2 from './images/video2.mp4'
 import cover3 from './images/video3.mp4'
@@ -32,12 +34,13 @@ import daniel from './images/daniel.png';
 import people1 from './images/people1.png';
 import people2 from './images/people2.png';
 import people3 from './images/people3.png';
+import people4 from './images/lijia.png';
+import people5 from './images/nick.png';
+import wynne from './images/wynne.png';
 import pattern from './images/pattern.png'
 import piePatternSrc from './images/pie_pattern.png'
 import ms1 from './images/ms1.jpg'
 import ms2 from './images/ms2.jpg'
-import ms3 from './images/ms3.png'
-import ms4 from './images/ms4.png'
 import facebook from './images/share_facebook.svg'
 import linkedin from './images/share_linkedin.svg'
 import wechat from './images/share_wechat.svg'
@@ -413,10 +416,9 @@ function start_expand_reverse() {
 });
 
 let background_dot = {backgroundImage: 'url(' + pattern + ')', backgroundSize: '200px 200px'}
+let coverMobile = {backgroundImage: 'url(' + cover_mobile + ')'}
 let ms1_bg = {backgroundImage: 'url(' + ms1 + ')'}
 let ms2_bg = {backgroundImage: 'url(' + ms2 + ')'}
-let ms3_bg = {backgroundImage: 'url(' + ms3 + ')'}
-let ms4_bg = {backgroundImage: 'url(' + ms4 + ')'}
 
 let pages = [
     {anchor: "whtwedo", cls: "", href: "#whtwedo", content: "What We Do", video: cover1},
@@ -429,11 +431,11 @@ let pages = [
 
 let headshot = [
     {name: "Daniel Inman", content: "Daniel Inman is an experienced financial writer who has worked in Hong Kong, China and Japan for more than a decade. He most recently covered markets across Asia and China’s financial system for The Wall Street Journal. Before that he was a deal reporter at FinanceAsia, a leading sell-side trade publication, where he also wrote about the Chinese economy. Daniel has a strong understanding of finance and economics across Asia –in addition to an awareness of how the region fits into the global financial system. He has a special focus on China. He has also provided marketing consultancy services to several of the world’s largest financial institutions –creating high-quality content for a number of global banks as well as several asset management companies. Daniel is from the United Kingdom and has a B.A. and MPhil in Philosophy from University College London.", src: daniel, title: "Director"},
-    {name: "Stephanie Cheung", content: "Stephanie is a public relations professional who has served clients in both the financial and luxury goods industries. She previously worked at FinanceAsia, where she helped arranged conferences and large banquets. After that, she gained hands-on PR and social marketing experience in China working on projects for high-profile clients -such as Chanel, Baccarat, American Airlines, Pernod Ricard etc.", src: stephanie, title: "Vice Director"},
-    {name: "Wynne Wang", content: "Wynne is a former financial journalist, who most recently worked at The Wall Street Journal in Shanghai, where she covered fixed income and the renminbi for close to a decade. Before that, she was worked at Oriental Morning Post. She graduated from Fudan University.", src: people1, title: "Journalist"},
-    {name: "Stella Shu", content: "Stella is a life-style editor. For more than 10 years, and has written for both English and Chinese language media.", src: people2, title: "Life-style editor"},
-    {name: "Li Jia", content: "Li Jia is a highly experienced translator that has worked in house at the Chinese securities regulator in Beijing and at the Shanghai Futures Exchange. A seasoned simultaneous interpreter, Li Jia has an extensive knowledge of finance that she is able to use to create fast and accurate translations from English to Chinese and vice versa. She has provided interpretation services for countless corporate clients and is a graduate of Zhejiang University.", src: people3, title: "Translator"},
-    
+    {name: "Stephanie Cheung", content: "Stephanie is a public relations professional who has served clients in both the financial and luxury goods industries. She previously worked at FinanceAsia, where she helped arranged conferences and large banquets. After that, she gained hands-on PR and social marketing experience in China working on projects for high-profile clients - such as Chanel, Baccarat, American Airlines, Pernod Ricard, etc.", src: stephanie, title: "Account Director"},
+    {name: "Wynne Wang", content: "Wynne is a former financial journalist, who most recently worked at The Wall Street Journal in Shanghai, where she covered fixed income and the renminbi for close to a decade. Before that, she was worked at Oriental Morning Post. She graduated from Fudan University.", src: wynne, title: "Senior Media Advisor"},
+    {name: "Stella Shu", content: "Stella is a life-style editor. For more than 10 years, and has written for both English and Chinese language media.", src: people2, title: "Life-style Content Specialist"},
+    {name: "Li Jia", content: "Li Jia is a highly experienced translator that has worked in house at the Chinese securities regulator in Beijing and at the Shanghai Futures Exchange. A seasoned simultaneous interpreter, Li Jia has an extensive knowledge of finance that she is able to use to create fast and accurate translations from English to Chinese and vice versa. She has provided interpretation services for countless corporate clients and is a graduate of Zhejiang University.", src: people4, title: "Translator"},
+    {name: "Nick Shearman", content: "Nick is a highly experienced graphics editor and his work has been recognised by SOPA and The Asia Media Awards. He has worked with some of the world's top newspapers and news agencies including the Wall Street Journal, South China Morning Post and Agence France-Presse. His areas of expertise are in data visualization and analysis.", src: people5, title: "Information Graphic"},
   ]
 
 let App = React.createClass({
@@ -495,11 +497,12 @@ let App = React.createClass({
         </div>
         <div id="fullpage">
             <section className="section">
-              <div id="cover">
+              <div id="cover" className="desktop">
                 {pages.map((page, idx) => 
                 <video className="cover_video" style={{opacity: this.state.opacity_array[idx]}} src={page.video} poster={coverImage} autoPlay loop muted></video>
                 )}
               </div>
+              <div id="cover_mobile" className="mobile" style={coverMobile}></div>
             </section>
             <section className="section" style={background_dot}>
               <div className="container">
@@ -508,8 +511,9 @@ let App = React.createClass({
                   <p>Vermillion Asia is a marketing and communications company operating out of Shanghai and Hong Kong. We are committed to providing innovative solutions that help our clients deliver a powerful message.</p>
                   <p>Established in 2015, we have already worked with a diverse range of international and Chinese clients in both the financial and consumer sectors – including banks, asset managers, technology firms, as well as luxury and lifestyle companies.</p>
                 </div>
-                <div id="mindmap">
+                <div id="mindmap" className="desktop">
                 </div>
+                <img src={outlines} className="line mobile" />
               </div>
             </section>
             
@@ -521,13 +525,8 @@ let App = React.createClass({
                 <div className="intro_container">
                   <div className="introduction">
                     <h2>Content Solution</h2>
-                    <div className="desktop">
                       <p>Vermilion Asia offers a comprehensive suite of content marketing solutions – providing everything from guidance at the strategic level to creating high-quality written materials that stand out in an environment where differentiation is of the utmost importance.</p>
                       <p>It is our belief that as companies face increasing demands to publish, the case for working with content specialists becomes more compelling. We are former journalists who have worked for top-tier publications in Asia, which means we have the necessary industry and regional knowledge, along with the right story-telling skills, to turn a corporate story into a compelling narrative.</p>
-                    </div>
-                    <div className="mobile">
-                      <p>Vermilion Asia offers a comprehensive suite of content marketing solutions – providing everything from guidance at the strategic level to creating high-quality written materials that stand out in an environment where differentiation is of the utmost importance.</p>
-                    </div>
                   </div>
                 </div>
                 <div className="content_container">
@@ -535,10 +534,12 @@ let App = React.createClass({
                     <Slider {...settings}>
                       <div>
                         <h3 className="highlight">Thought Leadership</h3>
-                        <p>Thought leadership is one of the best ways that knowledge-based companies in industries such as finance and technology can showcase their expertise to a wide range of stakeholders. Innovative and informative content can help establish a company or an individual professional as a leading expert in their respective field.</p>
-                        <p className="desktop">Well-written content is one of the best ways to highlight a company’s expertise, especially in a knowledge-based industry such as finance. We have written op-eds that have been published in high-profile media for some of the region’s most senior bankers and investors, as well as white papers for international and Chinese banks and asset managers.</p>
+                        Thought leadership is one of the best ways to highlight a company’s expertise, especially in a knowledge-based industry such as finance. We have written op-eds that have been published in high-profile media for some of the region’s most senior bankers and investors, as well as white papers for international and Chinese banks and asset managers.
                       </div>
-                      <div><h3 className="highlight">Marketing Materials</h3> A company’s brand can be enhanced and its capabilities highlighted by strong content. The possibilities are endless: we have sourced an original romantic novel in Chinese to be published on social media; we have created financially-informed materials from client events to spread the message to clients that are not able to attend in person; and we have</div>
+                      <div><h3 className="highlight">Marketing Materials</h3>
+                        A company’s brand can be enhanced and its capabilities highlighted by strong content. The possibilities are endless: we have sourced an original novel in Chinese that was published on social media; we have created financially-informed materials from client events to spread the message to clients that are not able to attend in person; and we have produced award pitches that are instrumental in helping our clients getting the accolades they deserve. </div>
+                      <div><h3 className="highlight">Multimedia</h3>
+                        The digital publishing environment presents new fresh opportunities for companies to present information. Infographics, interactive mini-sites and video are all viable options for businesses that want to deliver their content in an innovative package. We work with award-winning graphic designers, coders and filmmakers to ensure that our clients get the very best in digital journalism techniques. </div>
                     </Slider>
                   </div>
                 </div>
@@ -559,21 +560,20 @@ let App = React.createClass({
                 <div className="content_container">
                   <div className="content_list">
                     <Slider {...settings}>
-                      <div><h3 className="highlight">Media relations</h3>
-                      <p>Vermilion Asia is able to manage the communication efforts of financial companies that want to showcase their strengths in the media to an audience of existing and potential clients. We have advised and provided PR services to asset managers, financial technology firms and government clients. </p>
-                      <p className="desktop">With practical journalism experience in both international media and regional trade publications, we understand what reporters want and how best to pitch them in a way that maximizes exposure.
-                      </p>
+                      <div><h3 className="highlight">Media Relations</h3>
+                      Vermilion Asia helps financial companies that want to showcase their strengths in the media to an audience of existing and potential clients. We have advised and provided PR services to asset managers, financial technology firms and government clients.
+                        <br/>
+                        <br/>
+                      With practical journalism experience in both international media and regional trade publications, we understand what reporters want and how best to pitch them in a way that maximizes exposure.
                       </div>
                       <div><h3 className="highlight">Media training</h3>
-                        <div className="desktop">
-                          <p>Vermilion Asia’s media training services prepares professionals to become effective spokespeople who can clearly and confidently deliver their message in the media.</p>
-                          <p>Our tailor-made session employ practical learning techniques to help spokespeople appear at their very best when speaking to journalists at magazines, newspapers, and on the television.</p>
-                          <p>As former journalists with extensive experience working in both international and trade publications, we are able to help everyone from beginners who have yet to face their first interview to more seasoned professional who want to improve their media skills.
-                          </p>
-                        </div>
-                        <div className="mobile">
-                          Vermilion Asia’s media training services prepares professionals to become effective spokespeople who can clearly and confidently deliver their message in the media. Our tailor-made session employ practical learning techniques to help spokespeople appear at their very best when speaking to journalists at magazines, newspapers, and on the television.
-                        </div>
+                        Vermilion Asia’s media training services prepares professionals to become effective spokespeople who can clearly and confidently deliver their message in the media.
+                        <br/>
+                        <br/>
+                        Our tailor-made session employ practical learning techniques to help spokespeople appear at their very best when speaking to journalists at magazines, newspapers, and on the television.
+                        <br/>
+                        <br/>
+                        As former journalists with extensive experience working in both international and trade publications, we are able to help everyone from beginners who have yet to face their first interview to more seasoned professional who want to improve their media skills.
                       </div>
                     </Slider>
                   </div>
@@ -586,12 +586,12 @@ let App = React.createClass({
                 <div className="intro_container">
                   <div className="introduction">
                     <h2>Social Media</h2>
-                    <p>Vermilion Asia offers a full range of social media services – ranging from campaign strategy, account management to content creation – that strengthens a client’s online presence. Working with a number of international and Chinese platforms, we have a particular on WeChat – China’s most powerful social application. We are one of the first companies to support an international financial firm’s efforts on WeChat.</p>
+                    <p>Vermilion Asia offers a full range of social media services – ranging from campaign strategy, account management to content creation – that strengthens a client’s online presence. Working with a number of international and Chinese platforms, we have a particular focus on Weibo and WeChat – China’s most powerful social application. We are one of the first companies to support an international financial firm’s efforts on WeChat.</p>
                   </div>
                 </div>
                 <div className="content_container">
                   <div className="chart_explain desktop">
-                    <p>Strong content is the foundation of any successful social media strategy. Good materials are punchy, easy to digest, and shareable. We believe that the key platform for a professional audience is LinkedIn, while companies looking to interact with a customer base in China have to consider a presence on WeChat (Weixin). </p>
+                    <p>Strong content is the foundation of any successful social media strategy. Good materials are punchy, easy to digest, and shareable. We believe that the key platform for a professional audience is LinkedIn, while companies looking to interact with a customer base in China have to consider a presence on WeChat (Weixin).</p>
                     <p>WeChat was launched in 2010 as a messaging app for smartphones. It now has more than 800 million active users, and it has incorporated a wide range of features to become China’s one-stop social networking app. The app has a diverse user base that cuts across the entire spectrum of society.</p>
                     </div>
                   <div id="bar_chart"></div>
@@ -604,7 +604,7 @@ let App = React.createClass({
                 <div className="intro_container">
                   <div className="introduction">
                     <h2>Marketing Strategy</h2>
-                    <p className="desktop">At Vermilion Asia, we believe marketing should take a strategic approach that incorporates several complementary techniques in order to ensure that a campaign has maximum impact. This can include brand management, content marketing, public relations, and events. With deep experience in all these areas, we are able to design and execute highly effective campaigns that deliver results.</p>
+                    <p>At Vermilion Asia, we believe marketing should take a strategic approach that incorporates several complementary techniques in order to ensure that a campaign has maximum impact. This can include brand management, content marketing, public relations, and events. With deep experience in all these areas, we are able to design and execute highly effective campaigns that deliver results.</p>
                     <p>With an on-the-ground presence in China, we are able to assist clients in one of the world’s most dynamic economies – delivering solutions that are local, while meeting international standards.
                     </p>
                   </div>
@@ -614,13 +614,16 @@ let App = React.createClass({
                     <Slider {...settings}>
                       <div>
                         <div className="ms_image" style={ms1_bg}></div>
-                        <h3 className="highlight">BRAND MANAGEMENT</h3>
-                        <p>Vermilion Asia executes events that are able to strengthen a companys relationship with its clients, while at the same time providing networking opportunities for guests. <span className="desktop">We arrange formal dinners and banquets, offsites for staff and clients, as well as conferences.We can handle every step of the process – from the initial planning stages, designing and sourcing materials, as well as on-the-day execution.</span></p>
+                        <h3 className="highlight">Brand Management</h3>
+                        <p>Having the right brand image is an essential part of any marketing campaign. We are capable of managing the public face of emerging companies, as well as maintaining the image of established players and building its visibility in new markets.</p>
                       </div>
                       <div>
                         <div className="ms_image" style={ms2_bg}></div>
                         <h3 className="highlight">Events</h3>
-                        <p>We are experienced in the full spectrum of brand work, from helping shape the new public faces of start-up companies, to maintaining the appropriate image of established global companies, <span className="desktop">to introducing new faces into established local markets. We can advise where your brand sits in relation to your competitors and help you build your image in the places it matters most.</span></p>
+                        Vermilion Asia executes events that are able to strengthen a companys relationship with its clients, while at the same time providing networking opportunities for guests. We arrange formal dinners and banquets, offsites for staff and clients, as well as conferences.
+                        <br/>
+                        <br/>
+                        We can handle every step of the process – from the initial planning stages, designing and sourcing materials, as well as on-the-day execution.
                       </div>
                     </Slider>
                   </div>
@@ -635,7 +638,7 @@ let App = React.createClass({
                     {headshot.map((head, idx) =>
                     <div className="headshot_thumb" onMouseOver={this.changeTextHandler.bind(this, idx)}>
                       <img src={head.src}/>
-                      <div className="headshot_name">{head.name}</div>
+                      <div className="headshot_name"></div>
                     </div>
                     )}
                   </div>
