@@ -27,11 +27,9 @@ import cover3 from './images/video3.mp4'
 import cover4 from './images/video4.mp4'
 import cover5 from './images/video5.mp4'
 import cover6 from './images/video6.mp4'
-
 import bgPatternImg from './images/vertical_cloth.png';
 import stephanie from './images/stephanie.png';
 import daniel from './images/daniel.png';
-import people1 from './images/people1.png';
 import people2 from './images/people2.png';
 import people3 from './images/people3.png';
 import people4 from './images/lijia.png';
@@ -57,7 +55,7 @@ $(document).ready(function() {
 
     
 
-    var margin = {top: 0, right: 160, bottom: 0, left: 110 + window_width/4},
+    var margin = {top: 0, right: 160, bottom: 0, left: 130 + window_width/4},
     width = window_width - margin.right - margin.left,
     height = window_height*0.9 - margin.top - margin.bottom;
 
@@ -422,7 +420,7 @@ let ms2_bg = {backgroundImage: 'url(' + ms2 + ')'}
 
 let pages = [
     {anchor: "whtwedo", cls: "", href: "#whtwedo", content: "What We Do", video: cover1},
-    {anchor: "ct", cls: "", href: "#ct", content: "Content Solution", video: cover2},
+    {anchor: "ct", cls: "", href: "#ct", content: "Content Solutions", video: cover2},
     {anchor: "pr", cls: "", href: "#pr", content: "Public Relations", video: cover3},
     {anchor: "sm", cls: "", href: "#sm", content: "Social Media", video: cover4},
     {anchor: "ms", cls: "", href: "#ms", content: "Marketing Strategy", video: cover5},
@@ -430,12 +428,12 @@ let pages = [
   ]
 
 let headshot = [
-    {name: "Daniel Inman", content: "Daniel Inman is an experienced financial writer who has worked in Hong Kong, China and Japan for more than a decade. He most recently covered markets across Asia and China’s financial system for The Wall Street Journal. Before that he was a deal reporter at FinanceAsia, a leading sell-side trade publication, where he also wrote about the Chinese economy. Daniel has a strong understanding of finance and economics across Asia –in addition to an awareness of how the region fits into the global financial system. He has a special focus on China. He has also provided marketing consultancy services to several of the world’s largest financial institutions –creating high-quality content for a number of global banks as well as several asset management companies. Daniel is from the United Kingdom and has a B.A. and MPhil in Philosophy from University College London.", src: daniel, title: "Director"},
-    {name: "Stephanie Cheung", content: "Stephanie is a public relations professional who has served clients in both the financial and luxury goods industries. She previously worked at FinanceAsia, where she helped arranged conferences and large banquets. After that, she gained hands-on PR and social marketing experience in China working on projects for high-profile clients - such as Chanel, Baccarat, American Airlines, Pernod Ricard, etc.", src: stephanie, title: "Account Director"},
-    {name: "Wynne Wang", content: "Wynne is a former financial journalist, who most recently worked at The Wall Street Journal in Shanghai, where she covered fixed income and the renminbi for close to a decade. Before that, she was worked at Oriental Morning Post. She graduated from Fudan University.", src: wynne, title: "Senior Media Advisor"},
-    {name: "Stella Shu", content: "Stella is a life-style editor. For more than 10 years, and has written for both English and Chinese language media.", src: people2, title: "Life-style Content Specialist"},
-    {name: "Li Jia", content: "Li Jia is a highly experienced translator that has worked in house at the Chinese securities regulator in Beijing and at the Shanghai Futures Exchange. A seasoned simultaneous interpreter, Li Jia has an extensive knowledge of finance that she is able to use to create fast and accurate translations from English to Chinese and vice versa. She has provided interpretation services for countless corporate clients and is a graduate of Zhejiang University.", src: people4, title: "Translator"},
-    {name: "Nick Shearman", content: "Nick is a highly experienced graphics editor and his work has been recognised by SOPA and The Asia Media Awards. He has worked with some of the world's top newspapers and news agencies including the Wall Street Journal, South China Morning Post and Agence France-Presse. His areas of expertise are in data visualization and analysis.", src: people5, title: "Information Graphic"},
+    {name: "Daniel Inman", content: "Daniel Inman is an experienced financial writer who has worked in Hong Kong, China and Japan for more than a decade. He most recently covered markets across Asia and China’s financial system for The Wall Street Journal. Before that he was a deal reporter at FinanceAsia, a leading sell-side trade publication, where he also wrote about the Chinese economy. Daniel has a strong understanding of finance and economics across Asia – in addition to an awareness of how the region fits into the global financial system. He has a special focus on China. He has also provided marketing consultancy services to several of the world’s largest financial institutions – creating high-quality content for a number of global banks as well as several asset management companies.", src: daniel, title: "Director", email: "daniel@vermilion-asia.com"},
+    {name: "Stephanie Cheung", content: "Stephanie is a public relations professional who has served clients in both the financial and luxury goods industries. She previously worked at FinanceAsia, where she helped arranged conferences and large banquets. After that, she gained hands-on PR and social marketing experience in China working on projects for high-profile clients – such as Chanel, Baccarat, American Airlines, Pernod Ricard, etc.", src: stephanie, title: "Account Director", email: "stephanie@vermilion-asia.com"},
+    {name: "Wynne Wang", content: "Wynne is a former financial journalist, who most recently worked at The Wall Street Journal in Shanghai, where she covered fixed income and the renminbi for close to a decade. Before that, she was worked at Oriental Morning Post. She graduated from Fudan University.", src: wynne, title: "Senior Media Advisor", email: ""},
+    {name: "Stella Shu", content: "Stella is a life-style editor and popular WeChat official account holder. She has more than 10 years’ experience writing for both English and Chinese language media.", src: people2, title: "Life-style Content Specialist", email: ""},
+    {name: "Li Jia", content: "Li Jia is a highly experienced translator that has worked in house at the Chinese securities regulator in Beijing and at the Shanghai Futures Exchange. A seasoned simultaneous interpreter, Li Jia has an extensive knowledge of finance that she is able to use to create fast and accurate translations from English to Chinese and vice versa. She has provided interpretation services for countless corporate clients and is a graduate of Zhejiang University.", src: people4, title: "Translator", email: ""},
+    {name: "Nick Shearman", content: "Nick is a highly experienced graphics editor and his work has been recognised by SOPA and The Asia Media Awards. He has worked with some of the world's top newspapers and news agencies including the Wall Street Journal, South China Morning Post and Agence France-Presse. His areas of expertise are in data visualization and analysis.", src: people5, title: "Information Graphic", email: ""},
   ]
 
 let App = React.createClass({
@@ -444,11 +442,13 @@ let App = React.createClass({
     let text_content
     let title
     let name
+    let email
     return {
       opacity_array: [1,0,0,0,0,0],
       text_content: headshot[0].content,
       title: headshot[0].title,
-      name: headshot[0].name
+      name: headshot[0].name,
+      email: headshot[0].email
     };
   },
 
@@ -470,7 +470,8 @@ let App = React.createClass({
     this.setState({
       text_content: headshot[order].content,
       title: headshot[order].title,
-      name: headshot[order].name
+      name: headshot[order].name,
+      email: headshot[order].email
     }) 
   },
 
@@ -524,7 +525,7 @@ let App = React.createClass({
               <div className="container">
                 <div className="intro_container">
                   <div className="introduction">
-                    <h2>Content Solution</h2>
+                    <h2>Content Solutions</h2>
                       <p>Vermilion Asia offers a comprehensive suite of content marketing solutions – providing everything from guidance at the strategic level to creating high-quality written materials that stand out in an environment where differentiation is of the utmost importance.</p>
                       <p>It is our belief that as companies face increasing demands to publish, the case for working with content specialists becomes more compelling. We are former journalists who have worked for top-tier publications in Asia, which means we have the necessary industry and regional knowledge, along with the right story-telling skills, to turn a corporate story into a compelling narrative.</p>
                   </div>
@@ -620,7 +621,7 @@ let App = React.createClass({
                       <div>
                         <div className="ms_image" style={ms2_bg}></div>
                         <h3 className="highlight">Events</h3>
-                        Vermilion Asia executes events that are able to strengthen a companys relationship with its clients, while at the same time providing networking opportunities for guests. We arrange formal dinners and banquets, offsites for staff and clients, as well as conferences.
+                        Vermilion Asia executes events that are able to strengthen a company's relationship with its clients, while at the same time providing networking opportunities for guests. We arrange formal dinners and banquets, offsites for staff and clients, as well as conferences.
                         <br/>
                         <br/>
                         We can handle every step of the process – from the initial planning stages, designing and sourcing materials, as well as on-the-day execution.
@@ -646,6 +647,7 @@ let App = React.createClass({
                     <div className="title">
                       <h2>{this.state.name}</h2>
                       <h3>{this.state.title}</h3>
+                      <a href={"mailto:" + this.state.email}>{this.state.email}</a>
                     </div>
                     <div className="description">{this.state.text_content}</div>
                   </div>

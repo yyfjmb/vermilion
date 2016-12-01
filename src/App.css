@@ -15,8 +15,8 @@
 
 .App {
   text-align: center;
-  font-family: 'Lato', 'Calibri', 'Verdana', 'Arial', sans-serif;
-  font-size: 14px;
+  font-family: 'Calibri', 'Lato', 'Verdana', 'Arial', sans-serif;
+  font-size: 13px;
   line-height: 1.8;
 }
 
@@ -232,8 +232,8 @@ video.cover_video {
 }
 
 .node text {
-  font-size: 12px;
-  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-family: 'calibri', sans-serif;
   letter-spacing: 1px;
 }
 
@@ -281,7 +281,7 @@ video.cover_video {
     color: #fff;
     text-align: center;
     opacity: 1;
-    font-size: 14px;
+    font-size: 1em;
     background-color: rgb(92, 18, 18);
     margin-top: -.5rem;
     padding: .4rem;
@@ -323,10 +323,25 @@ video.cover_video {
 }
 
 .text_container .title h3 {
-  margin-top: -10px;
-  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 1.5em;
   color: grey;
   font-family: 'Playfair Display SC', serif;
+  line-height: 1;
+}
+
+.text_container .title a {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: grey;
+  font-family: 'Playfair Display', serif;
+  margin: 5px 0;
+  display: block;
+}
+
+.text_container .title a:hover {
+  color: black;
 }
 
 .text_container .description {
@@ -836,7 +851,7 @@ video.cover_video {
   }
 
   .ms_image {
-    height: 0vh;
+    height: 20vh;
   }
 
   /*.chart_text {
