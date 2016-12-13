@@ -197,7 +197,7 @@ video.cover_video {
   width: 25%;
   text-align: justify;
   background-color: rgb(92,18,18);
-  font-family: 'Calibri', serif;
+  font-family: 'Calibri', sans-serif;
   color: white;
   padding-top: 80px;
   padding-left: 50px;
@@ -233,7 +233,7 @@ video.cover_video {
 
 .node text {
   font-size: 13px;
-  font-family: 'calibri', sans-serif;
+  font-family: 'Calibri', sans-serif;
   letter-spacing: 1px;
 }
 
@@ -245,7 +245,7 @@ video.cover_video {
 
 #headshot {
     width: 100%;
-    font-family: 'Calibri', serif;
+    font-family: 'Calibri', sans-serif;
     height: 90vh;
 }
 
@@ -350,7 +350,7 @@ video.cover_video {
 }
 
 .ct .content_container {
-  font-family: 'Calibri', serif;
+  font-family: 'Calibri', sans-serif;
   max-width: 1200px;
   width: 50%;
   padding: 30px;
