@@ -571,7 +571,7 @@ let App = React.createClass({
                         Vermilion Asia’s media training services prepares professionals to become effective spokespeople who can clearly and confidently deliver their message in the media.
                         <br/>
                         <br/>
-                        Our tailor-made session employ practical learning techniques to help spokespeople appear at their very best when speaking to journalists at magazines, newspapers, and on the television.
+                        Our tailor-made sessions employ practical learning techniques to help spokespeople appear at their very best when speaking to journalists at magazines, newspapers, and on the television.
                         <br/>
                         <br/>
                         As former journalists with extensive experience working in both international and trade publications, we are able to help everyone from beginners who have yet to face their first interview to more seasoned professional who want to improve their media skills.
@@ -595,7 +595,9 @@ let App = React.createClass({
                     <p>Strong content is the foundation of any successful social media strategy. Good materials are punchy, easy to digest, and shareable. We believe that the key platform for a professional audience is LinkedIn, while companies looking to interact with a customer base in China have to consider a presence on WeChat (Weixin).</p>
                     <p>WeChat was launched in 2010 as a messaging app for smartphones. It now has more than 800 million active users, and it has incorporated a wide range of features to become China’s one-stop social networking app. The app has a diverse user base that cuts across the entire spectrum of society.</p>
                     </div>
-                  <div id="bar_chart"></div>
+                  <div id="bar_chart">
+                  </div>
+                  <div className="source" >Sources: <a href="https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/" target="_blank" > Statista </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Number of Active Users)</div>
                 </div>
               </div>
             </section>
@@ -606,7 +608,7 @@ let App = React.createClass({
                   <div className="introduction">
                     <h2>Marketing Strategy</h2>
                     <p>At Vermilion Asia, we believe marketing should take a strategic approach that incorporates several complementary techniques in order to ensure that a campaign has maximum impact. This can include brand management, content marketing, public relations, and events. With deep experience in all these areas, we are able to design and execute highly effective campaigns that deliver results.</p>
-                    <p>With an on-the-ground presence in China, we are able to assist clients in one of the world’s most dynamic economies – delivering solutions that are local, while meeting international standards.
+                    <p>Our on-the-ground presence in China, means that we are able to assist clients in one of the world’s most dynamic economies – providing solutions that are local, while at the same meet international standards.
                     </p>
                   </div>
                 </div>
