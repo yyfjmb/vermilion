@@ -527,7 +527,7 @@ let App = React.createClass({
                   <div className="introduction">
                     <h2>Content Solutions</h2>
                       <p>Vermilion Asia offers a comprehensive suite of content marketing solutions – providing everything from guidance at the strategic level to creating high-quality written materials that stand out in an environment where differentiation is of the utmost importance.</p>
-                      <p>It is our belief that as companies face increasing demands to publish, the case for working with content specialists becomes more compelling. We are former journalists who have worked for top-tier publications in Asia, which means we have the necessary industry and regional knowledge, along with the right story-telling skills, to turn a corporate story into a compelling narrative.</p>
+                      <p>It is our belief that as companies face increasing demands to publish, the case for working with content specialists becomes more compelling. <span className="desktop">We are former journalists who have worked for top-tier publications in Asia, which means we have the necessary industry and regional knowledge, along with the right story-telling skills, to turn a corporate story into a compelling narrative.</span></p>
                   </div>
                 </div>
                 <div className="content_container">
@@ -569,12 +569,12 @@ let App = React.createClass({
                       </div>
                       <div><h3 className="highlight">Media training</h3>
                         Vermilion Asia’s media training services prepares professionals to become effective spokespeople who can clearly and confidently deliver their message in the media.
+                        <span className="desktop"><br/>
+                        <br/>
+                        Our tailor-made sessions employ practical learning techniques to help spokespeople appear at their very best when speaking to journalists at magazines, newspapers, and on the television.</span>
                         <br/>
                         <br/>
-                        Our tailor-made sessions employ practical learning techniques to help spokespeople appear at their very best when speaking to journalists at magazines, newspapers, and on the television.
-                        <br/>
-                        <br/>
-                        As former journalists with extensive experience working in both international and trade publications, we are able to help everyone from beginners who have yet to face their first interview to more seasoned professional who want to improve their media skills.
+                          As former journalists with extensive experience working in both international and trade publications, we are able to help everyone from beginners who have yet to face their first interview to more seasoned professional who want to improve their media skills.
                       </div>
                     </Slider>
                   </div>
@@ -597,7 +597,7 @@ let App = React.createClass({
                     </div>
                   <div id="bar_chart">
                   </div>
-                  <div className="source" >Sources: <a href="https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/" target="_blank" > Statista </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Number of Active Users)</div>
+                  <div className="source" >Sources: <a href="https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/" target="_blank" > Statista </a> <span>(Number of Active Users)</span></div>
                 </div>
               </div>
             </section>
@@ -608,7 +608,7 @@ let App = React.createClass({
                   <div className="introduction">
                     <h2>Marketing Strategy</h2>
                     <p>At Vermilion Asia, we believe marketing should take a strategic approach that incorporates several complementary techniques in order to ensure that a campaign has maximum impact. This can include brand management, content marketing, public relations, and events. With deep experience in all these areas, we are able to design and execute highly effective campaigns that deliver results.</p>
-                    <p>Our on-the-ground presence in China, means that we are able to assist clients in one of the world’s most dynamic economies – providing solutions that are local, while at the same meet international standards.
+                    <p className="desktop">Our on-the-ground presence in China, means that we are able to assist clients in one of the world’s most dynamic economies – providing solutions that are local, while at the same meet international standards.
                     </p>
                   </div>
                 </div>
@@ -626,7 +626,7 @@ let App = React.createClass({
                         Vermilion Asia executes events that are able to strengthen a company's relationship with its clients, while at the same time providing networking opportunities for guests. We arrange formal dinners and banquets, offsites for staff and clients, as well as conferences.
                         <br/>
                         <br/>
-                        We can handle every step of the process – from the initial planning stages, designing and sourcing materials, as well as on-the-day execution.
+                        <span className="desktop">We can handle every step of the process – from the initial planning stages, designing and sourcing materials, as well as on-the-day execution.</span>
                       </div>
                     </Slider>
                   </div>
